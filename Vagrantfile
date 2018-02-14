@@ -1,19 +1,16 @@
-Vagrant.configure("2") do |config|
-	 config.vm.define "box1" do |box1|
+#!/bin/bash
+ps -eo %mem,%cpu,comm --sort=-%cpu | head -n 6
 
-         box1.vm.box="ubuntu/trusty64"
+#!/bin/bash
+echo "Who's password would you like to update?"
+read USERNAME
+if [ $(id -u) -eq 1 ]; then
+	echo "User does not exist!"
+else
+	passwd $USERNAMES
+fi
 
-         box1.vm.network :forwarded_port, guest: 22, host: 10122, id: "ssh"
-
- end
-
-  config.vm.define "box2" do |box2|
-
-         box2.vm.box="scotch/box"
-
-         box2.vm.network :forwarded_port, guest: 22, host: 10222, id: "ssh"
- end
-end
-
-#This is another edit! Mwahahaha!!!
-#This is Svetlana's change!
+#!/bin/bash
+for i in `cat /home/luke/userlist.txt`; do
+echo -e "htc/nhtc" | passw1d $i
+done
