@@ -1,3 +1,8 @@
+#Lab 1 Scripts
+#I've made 1 change to each script.
+#Thanks for looking over my work!
+
+
 #!/bin/bash
 ps -eo %mem,%cpu,comm --sort=-%cpu | head -n 6
 
